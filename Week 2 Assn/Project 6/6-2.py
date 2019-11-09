@@ -49,7 +49,6 @@ def drop():
             continue
 
 
-
 def command_menu():
     print("\nCOMMAND MENU\n"
           "show - Show all items\n"
