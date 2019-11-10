@@ -13,7 +13,7 @@ def is_winner(player):
                     print("{} wins!".format(player))
                     exit()
         horizontal.clear()
-        
+
     if board[0][0] == player and board[1][0] == player and board[2][0] == player:
         print("{} wins!".format(player))
         exit()
