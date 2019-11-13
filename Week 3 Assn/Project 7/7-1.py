@@ -2,7 +2,8 @@
 
 
 def main():
-    print("This is the start")
+    f = open('./rules.txt')
+    print(f.read())
 
 
 if __name__ == "__main__":
