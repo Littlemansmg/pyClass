@@ -1,9 +1,86 @@
 # created by Scott "LittlemanSMG" Goes on DD/MM/YYYY
 
+import time
+import random as rand
+
+
+def updateinventory(item):
+    update = open('./inventory.txt', 'a', encoding='utf-8')
+    update.writelines('\n' + item)
+    update.close()
+
+
+def walk():
+    randomitem = rand.choice(itemlist)
+    print("While talking down a path, you see {}.".format(randomitem))
+    pickup = input("Do you want to grab it? (y/n)")
+
+    if len(inventory) < 4 and pickup == 'y':
+        updateinventory(randomitem)
+        inventory.append(randomitem)
+        print("Picked up {}.".format(randomitem))
+    elif pickup == 'n':
+        print("Okay.")
+    else:
+        print("You can't carry any more items. Drop something first.")
+
+
+def show():
+    for i in range(len(inventory)):
+        print("{}. {}".format(i + 1, inventory[i]))
+    time.sleep(2)
+
+
+def drop():
+    show()
+    while True:
+        update = int(input("Number: "))
+        try:
+            inventory[update - 1]
+            print("{} was dropped".format(inventory[update - 1]))
+            inventory.pop(update - 1)
+            time.sleep(2)
+            break
+        except IndexError:
+            print("That's not a valid number. Try again")
+            continue
+
+
+
+def command_menu():
+    print("\nCOMMAND MENU\n"
+          "walk - Walk down the path\n"
+          "show - Show all items\n"
+          "drop - Drop an item\n"
+          "exit - Exit program")
+
 
 def main():
-    print("This is the start")
+    while True:
+        command_menu()
+        command = input("Command: ")
+        if command.lower() == 'walk':
+            walk()
+        elif command.lower() == 'show':
+            show()
+        elif command.lower() == 'drop':
+            drop()
+        elif command.lower() == 'exit':
+            print("Bye!")
+            exit()
 
 
 if __name__ == "__main__":
+    inventory = []
+    itemlist = []
+
+    file = open('./inventory.txt')
+    for i in file.readlines():
+        inventory.append(i.strip('\n'))
+    file.close()
+
+    file = open('./wizard_all_items.txt', "r", encoding='utf-8')
+    for i in file.readlines():
+        itemlist.append(i.strip('\n'))
+
     main()
