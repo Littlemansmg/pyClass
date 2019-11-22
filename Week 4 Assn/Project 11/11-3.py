@@ -28,8 +28,11 @@ def main():
     future_value = get_value(invest, interest, years)
     print("Future value:\t\t\t\t${:,.2f}".format(future_value))
 
+    logger.info(datetime.datetime.now().strftime("%Y-%m-%d %I:%M:%S") +
+                f" - {invest}|{interest}|{years}|{future_value}")
+
 
 if __name__ == "__main__":
     logger.basicConfig(handlers=[logger.FileHandler('11-3.log', 'a', 'utf-8')],
-        level=logger.INFO)
+                       level=logger.INFO)
     main()
