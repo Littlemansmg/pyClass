@@ -1,4 +1,3 @@
-Year,Country,Coach,Captain
 1930,Uruguay,Alberto Suppici,José Nasazzi
 1934,Italy,Vittorio Pozzo,Gianpiero Combi
 1938,Italy,Vittorio Pozzo,Giuseppe Meazza
