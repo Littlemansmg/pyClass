@@ -6,4 +6,6 @@ def main():
 
 
 if __name__ == "__main__":
+    # fifa_www = {}
+    # with
     main()
