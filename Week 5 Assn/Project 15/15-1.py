@@ -91,7 +91,6 @@ def main():
 
 
         end = input("\nContinue? (y/n): ")
-        print()
         if end.lower() == 'n':
             exit()
 
