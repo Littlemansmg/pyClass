@@ -7,35 +7,27 @@ class MyFirstGUI:
         self.master = master
         master.title("Right Triangle Calculator")
 
-        self.label = Label(master, text="This is our first GUI!")
-        self.label.pack()
-
-        self.greet_button = Button(master, text="Greet", command=self.greet)
-        self.greet_button.pack()
-
         self.close_button = Button(master, text="Close", command=master.quit)
-        self.close_button.pack(side=BOTTOM)
+        self.close_button.grid(row=10, column=10)
 
         self.calculate_button = Button(master, text="Calculate", command=self.calculate)
-        self.calculate_button.pack(side=BOTTOM)
+        self.calculate_button.grid(row=10, column=4)
 
         self.a_side_label = Label(master, text='Side A')
-        self.a_side_label.pack()
+        self.a_side_label.grid(row=3, column=3)
         self.side_a = Entry(master)
-        self.side_a.pack()
+        self.side_a.grid(row=3, column=4)
 
         self.b_side_label = Label(master, text='Side B')
-        self.b_side_label.pack()
+        self.b_side_label.grid(row=4, column=3)
         self.side_b = Entry(master)
-        self.side_b.pack()
+        self.side_b.grid(row=4, column=4)
 
         self.c_side_label = Label(master, text='Side C')
-        self.c_side_label.pack()
-        self.c_frame = Message(master, highlightbackground="black", highlightcolor="black", highlightthickness=1,
-                               width=100)
-        self.c_frame.pack()
-
-
+        self.c_side_label.grid(row=5, column=3)
+        self.c_frame = Label(master, highlightbackground="black", highlightcolor="black", highlightthickness=1,
+                             state='disabled')
+        self.c_frame.grid(row=5, column=4)
 
     def greet(self):
         print("Greetings!")
@@ -46,7 +38,7 @@ class MyFirstGUI:
             b = int(self.side_b.get())
 
             remainder = round(math.sqrt(a ** 2 + b ** 2), 3)
-            self.c_frame.config(text=remainder)
+            self.c_frame.config(text=remainder, state='active')
         except ValueError:
             print("Can't get an empty")
 
