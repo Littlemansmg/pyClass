@@ -29,9 +29,6 @@ class MyFirstGUI:
                              state='disabled')
         self.c_frame.grid(row=5, column=4)
 
-    def greet(self):
-        print("Greetings!")
-
     def calculate(self):
         try:
             a = int(self.side_a.get())
