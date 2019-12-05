@@ -11,25 +11,27 @@ class GUI:
         self.name_label.grid(row=1, column=1)
         self.name_entry = Entry(master)
         self.name_entry.insert(0, self.name)
-        self.name_entry.grid(row=1, column=2)
+        self.name_entry.grid(row=1, column=2, columnspan=2)
+
+        self.required = Label(master, text='Required.', show='disabled')
 
         self.language_label = Label(master, text='Language:')
         self.language_label.grid(row=2, column=1)
         self.language_entry = Entry(master)
         self.language_entry.insert(0, self.language)
-        self.language_entry.grid(row=2, column=2)
+        self.language_entry.grid(row=2, column=2, columnspan=2)
 
         self.name_label = Label(master, text='Auto save every x minutes:')
         self.name_label.grid(row=3, column=1)
         self.name_entry = Entry(master)
         self.name_entry.insert(0, self.time)
-        self.name_entry.grid(row=3, column=2)
+        self.name_entry.grid(row=3, column=2, columnspan=2)
 
         self.save_button = Button(master, text="Save")
-        self.save_button.grid(row=4, column=1)
+        self.save_button.grid(row=4, column=2)
 
         self.close_button = Button(master, text="Close", command=master.quit)
-        self.close_button.grid(row=4, column=2)
+        self.close_button.grid(row=4, column=3)
 
 
 def center_gui(root):
