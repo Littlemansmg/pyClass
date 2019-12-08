@@ -14,11 +14,3 @@ def get_command():
     if command != "view" and command != "add" and command != "del" and command != 'exit':
         return ValueError
     return command
-
-
-def add():
-    pass
-
-
-def delete():
-    pass
