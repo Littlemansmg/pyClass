@@ -1,0 +1,35 @@
+Not an order, just a list of things that need to be done.
+
+1. GUI √
+2. DB for information √
+    ID, time start, start money, added money, stop time, stop money.
+3. Card, Deck, Hand, and Session class
+    Card class
+        __str__ to display cards suits/points
+        Just put cards from deck into hand?
+        hand == 2 card objects
+    Deck class
+        make the deck, shuffle, and deal
+    Hand class
+        store each players hand
+        hit count(Why?) get points
+    Session class
+        Store session data to put into DB
+        See above to see what to store.
+4. Locale module
+    display money
+5. Betting
+    player starts with x money - 100 I guess
+    min bet 5 max 1000
+    can't bet more than current money
+    betting is 1.5 aka 3:2
+6. Actually use Try excepts to handle all errors.
+
+
+Questions:
+1. Does he just want section 4 or a snapshot of each section?
+    A. If you do want each section, it's mentioned in section 1 to get money from a CSV file.
+        It's a CSV file called `money.txt`, so which is it? Do you want a CSV or a txt file.
+2. If the logic for Hits are in the Hand class, does the rest of the logic, like standing,
+    just go into another file or just find a class to fit it in?
+3. Why do we need to count how many cards are in each hand via Hand class

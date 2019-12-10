@@ -1,6 +1,6 @@
 
 from game_logic import *
-from user_interface import *
+from UI import *
 
 
 def main():
